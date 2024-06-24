@@ -5,6 +5,6 @@ import { DepdropdownContainerProps } from "../typings/DepdropdownProps";
 
 import "./ui/Depdropdown.css";
 
-export function Depdropdown({ sampleText }: DepdropdownContainerProps): ReactElement {
-    return <HelloWorldSample sampleText={sampleText ? sampleText : "World"} />;
+export function Depdropdown({ sourceobject, sourceKey }: DepdropdownContainerProps): ReactElement {
+    return <HelloWorldSample sourceobject={sourceobject} sourceKey={sourceKey}/>;
 }

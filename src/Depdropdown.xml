@@ -8,10 +8,19 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
-            </property>
+            <propertyGroup caption="Data Section">
+                <property key="sourceobject" type="datasource" isList="true" required="true">
+                    <caption>Menu data source</caption>
+                    <description>choose data source for your main entity</description>
+                </property>
+                <property key="sourceKey" type="attribute" dataSource="sourceobject" required="true">
+                    <caption>field</caption>
+                    <description></description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
         </propertyGroup>
     </properties>
 </widget>

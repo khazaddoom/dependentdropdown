@@ -4,13 +4,15 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
+import { ListValue, ListAttributeValue } from "mendix";
 
 export interface DepdropdownContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    sampleText: string;
+    sourceobject: ListValue;
+    sourceKey: ListAttributeValue<string>;
 }
 
 export interface DepdropdownPreviewProps {
@@ -22,5 +24,6 @@ export interface DepdropdownPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    sampleText: string;
+    sourceobject: {} | { caption: string } | { type: string } | null;
+    sourceKey: string;
 }

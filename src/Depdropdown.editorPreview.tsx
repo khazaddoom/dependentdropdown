@@ -1,9 +1,7 @@
 import { ReactElement, createElement } from "react";
-import { HelloWorldSample } from "./components/HelloWorldSample";
-import { DepdropdownPreviewProps } from "../typings/DepdropdownProps";
 
-export function preview({ sampleText }: DepdropdownPreviewProps): ReactElement {
-    return <HelloWorldSample sampleText={sampleText} />;
+export function preview(): ReactElement {
+    return <h1>Hello</h1>;
 }
 
 export function getPreviewCss(): string {
