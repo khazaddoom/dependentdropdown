@@ -2,9 +2,8 @@ import { ReactElement, createElement, useEffect, useState } from "react";
 import { ListValue, ListAttributeValue, Option } from "mendix";
 import Select from "react-select";
 export interface HelloWorldSampleProps {
-    sampleText?: string;
-    sourceobject: ListValue;
-    sourceKey: ListAttributeValue<string>;
+    rootEntityObject: ListValue;
+    rootObjectProperty: ListAttributeValue<string>;
 }
 
 type DataProps = {
@@ -12,20 +11,20 @@ type DataProps = {
     label: Option<string>;
 };
 
-export function HelloWorldSample({ sourceobject, sourceKey }: HelloWorldSampleProps): ReactElement {
+export function HelloWorldSample({ rootEntityObject, rootObjectProperty }: HelloWorldSampleProps): ReactElement {
     const [options, setOptions] = useState<DataProps[]>([]);
     useEffect(() => {
-        if (sourceobject.items) {
+        if (rootEntityObject.items) {
             setOptions(
-                sourceobject.items.map(item => {
+                rootEntityObject.items.map(item => {
                     return {
-                        option: sourceKey.get(item).value,
-                        label: sourceKey.get(item).value
+                        option: rootObjectProperty.get(item).value,
+                        label: rootObjectProperty.get(item).value
                     };
                 })
             );
         }
-    }, [sourceobject.items, sourceKey]);
+    }, [rootEntityObject.items, rootObjectProperty]);
 
     return (
         <Select

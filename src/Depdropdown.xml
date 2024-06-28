@@ -8,19 +8,37 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <propertyGroup caption="Data Section">
-                <property key="sourceobject" type="datasource" isList="true" required="true">
+            <!-- <propertyGroup caption="Data Section">
+                <property key="rootEntityObject" type="datasource" isList="true" required="true">
                     <caption>Menu data source</caption>
                     <description>choose data source for your main entity</description>
                 </property>
-                <property key="sourceKey" type="attribute" dataSource="sourceobject" required="true">
+                <property key="rootObjectProperty" type="attribute" dataSource="rootEntityObject" required="true">
                     <caption>field</caption>
                     <description></description>
                     <attributeTypes>
                         <attributeType name="String"/>
                     </attributeTypes>
                 </property>
-            </propertyGroup>
+            </propertyGroup> -->
+            <property key="targetDatasource" type="datasource" isList="true">
+                <caption>Selectable objects</caption>
+                <description/>
+            </property>
+            <property key="parentRef" type="association" selectableObjects="targetDatasource">
+                <caption>Reference</caption>
+                <description>Reference</description>
+                <associationTypes>
+                    <associationType name="Reference"/>
+                </associationTypes>
+            </property>
+            <property key="rootObjectProperty" type="attribute" dataSource="targetDatasource" required="true">
+                    <caption>field</caption>
+                    <description></description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
         </propertyGroup>
     </properties>
 </widget>
